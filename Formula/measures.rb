@@ -13,8 +13,6 @@ class Measures < Formula
       system "svn co https://svn.cv.nrao.edu/svn/casa-data/distro/ephemerides/"
       system "svn co https://svn.cv.nrao.edu/svn/casa-data/distro/geodetic/"
     end
-    rm_f Dir["/usr/local/Cellar/measures/data/ephemerides/splatalogue.db"]
-    rm_f Dir["/usr/local/Cellar/measures/data/ephemerides/SplatDefault.tbl"]
   end
 
   test do
