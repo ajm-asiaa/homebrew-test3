@@ -2,9 +2,9 @@ class Measures < Formula
   desc "Download Ephemerides and Geodetic measures casadata for casacore"
   homepage "https://cartavis.github.io/"
   url "file:///dev/null"
-  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  license "NOASSERTION"
   version "21.3.16"
+  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  license "GPL-2.0-only"
 
   depends_on "svn"
 
