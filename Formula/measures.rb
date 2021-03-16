@@ -9,13 +9,12 @@ class Measures < Formula
   depends_on "svn"
 
   def install
-    args << "/usr/local/Cellar/measures/data"
-    system "mkdir", "-p", "/usr/local/Cellar/measures/data/ephemerides"
-    system "mkdir", "-p", "/usr/local/Cellar/measures/data/geodetic"
-    system "svn", "co", "https://svn.cv.nrao.edu/svn/casa-data/distro/ephemerides/", "${args}/ephemerides"
-    system "svn", "co", "https://svn.cv.nrao.edu/svn/casa-data/distro/geodetic/", "${args}/geodetic"
-    system "rm", "-r", "/usr/local/Cellar/measures/data/ephemerides/splatalogue.db"
-    system "rm", "-r", "/usr/local/Cellar/measures/data/ephemerides/SplatDefault.tbl"
+    mkdir "/usr/local/Cellar/measures/data" do
+      system "svn co https://svn.cv.nrao.edu/svn/casa-data/distro/ephemerides/"
+      system "svn co https://svn.cv.nrao.edu/svn/casa-data/distro/geodetic/"
+    end
+    rm_f Dir["/usr/local/Cellar/measures/data/ephemerides/splatalogue.db"]
+    rm_f Dir["/usr/local/Cellar/measures/data/ephemerides/SplatDefault.tbl"]
   end
 
   test do
